@@ -1,27 +1,42 @@
 body {
     font-family: 'Irish Grover', cursive;
+    background-image: url("../assets/bgEaserEggs.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .h1{
     text-align: center;
     font-size: 100px;
     margin-bottom: 30px;
-    margin-top: 300px;
 }
 
 .button{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    font-size: xx-large;
-    background: #c677e3;
+    font-size: 65px;
+    background: #ed9efd;
     color: white;
     border: none;
-    padding: 10px 40px;
+    padding: 10px;
     border-radius: 10px;
     cursor: pointer;
+    width: 300px;
+    text-align: center;
+    text-underline: none;
 }
 
 .button:hover{
-    background: #894c9a;
+    background: #c577d3;
 }
