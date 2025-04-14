@@ -1,0 +1,25 @@
+body {
+    font-family: 'Irish Grover', cursive;
+    background: #a6d6ec;
+    color: white;
+}
+
+.h1{
+    text-align: center;
+    font-size: 100px;
+}
+
+.game{
+    background: white;
+    color: #a6d6ec;
+    border-radius: 10px;
+    width: 500px;
+    padding: 10px;
+}
+
+#gamegrid{
+    width: 1600px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
