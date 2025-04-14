@@ -26,7 +26,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     font-size: 65px;
-    background: #ed9efd;
+    background: #f06eaa;
     color: white;
     border: none;
     padding: 10px;
@@ -34,9 +34,9 @@ body {
     cursor: pointer;
     width: 300px;
     text-align: center;
-    text-underline: none;
+    text-decoration: none;
 }
 
 .button:hover{
-    background: #c577d3;
+    background: #f9a7e7;
 }
