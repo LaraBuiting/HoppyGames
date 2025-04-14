@@ -9,16 +9,48 @@ body {
     font-size: 100px;
 }
 
+.img{
+    border-radius: 10px;
+}
+
+#eggText1{
+    margin-top: 25px;
+    margin-bottom: 7px;
+    color: #f06eaa;
+    font-size: 50px;
+}
+
+#eggText2{
+    margin-top: 25px;
+    margin-bottom: 7px;
+    color: #0072bc ;
+    font-size: 50px;
+}
+
+#eggText3{
+    margin-top: 25px;
+    margin-bottom: 7px;
+    color: #83e487;
+    font-size: 50px;
+}
+
+.eggButton{
+    color: #99d2f6;
+    font-size: 30px;
+    text-decoration: none;
+}
+
 .game{
+    margin: auto;
     background: white;
     color: #a6d6ec;
     border-radius: 10px;
     width: 500px;
-    padding: 10px;
+    padding: 20px;
 }
 
 #gamegrid{
-    width: 1600px;
+    width: 1700px;
     margin: auto;
     display: grid;
     grid-template-columns: auto auto auto;
