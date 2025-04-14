@@ -1,0 +1,27 @@
+body {
+    font-family: 'Irish Grover', cursive;
+}
+
+.h1{
+    text-align: center;
+    font-size: 100px;
+    margin-bottom: 30px;
+    margin-top: 300px;
+}
+
+.button{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: xx-large;
+    background: #c677e3;
+    color: white;
+    border: none;
+    padding: 10px 40px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.button:hover{
+    background: #894c9a;
+}
