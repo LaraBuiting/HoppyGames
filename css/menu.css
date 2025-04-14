@@ -1,16 +1,48 @@
 body {
     font-family: 'Irish Grover', cursive;
-    background: #a6d6ec;
-    color: white;
+    background: #d2eeff;
 }
 
 .h1{
     text-align: center;
     font-size: 100px;
+    color: #a655e2;
 }
 
 .img{
     border-radius: 10px;
+}
+
+#egg1{
+    width: 180px;
+    position: absolute;
+    top: 160px;
+    left: 40px;
+    transform: rotate(-15deg);
+}
+
+#egg2{
+    width: 180px;
+    position: absolute;
+    bottom: 220px;
+    left: 550px;
+    transform: rotate(15deg);
+}
+
+#egg3{
+    width: 150px;
+    position: absolute;
+    top: 200px;
+    right: 620px;
+    transform: rotate(-5deg);
+}
+
+#egg4{
+    width: 150px;
+    position: absolute;
+    bottom: 150px;
+    right: 80px;
+    transform: rotate(-10deg);
 }
 
 #eggText1{
@@ -47,6 +79,7 @@ body {
     border-radius: 10px;
     width: 500px;
     padding: 20px;
+    position: static;
 }
 
 #gamegrid{
