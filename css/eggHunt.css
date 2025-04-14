@@ -1,0 +1,91 @@
+body {
+    font-family: 'Irish Grover', cursive;
+}
+
+#title{
+    position: absolute;
+    width: 271px;
+    height: 77px;
+    left: 626px;
+    top: -25px;
+
+    font-size: 64px;
+    line-height: 77px;
+
+    color: #F95EA5;
+}
+
+#sub_text {
+    position: absolute;
+    width: 297px;
+    height: 39px;
+    left: 613px;
+    top: 80px;
+
+    font-size: 32px;
+    line-height: 39px;
+
+    color: #F490F7;
+}
+
+#egg_counter {
+    position: absolute;
+    width: 203px;
+    height: 39px;
+    left: 1234px;
+    top: 80px;
+
+    font-size: 32px;
+    line-height: 39px;
+
+    color: #99D2F6;
+}
+
+#game_screen {
+    position: absolute;
+    width: 1350px;
+    height: 523px;
+    left: 87px;
+    top: 166px;
+
+    background: #D9D9D9;
+}
+
+#easter_egg_img1 {
+    position: absolute;
+    width: 89.25px;
+    height: 119px;
+    left: 75px;
+    top: 70px;
+}
+
+#easter_egg_img2 {
+    position: absolute;
+    width: 77.96px;
+    height: 105.99px;
+    left: 20px;
+    top: 125px;
+
+    transform: rotate(-28.97deg);
+}
+
+#easter_egg_img3 {
+    position: absolute;
+    width: 66.75px;
+    height: 89px;
+    left: 1370px;
+    top: 645px;
+
+    transform: rotate(180deg);
+}
+
+
+#easter_egg_img4 {
+    position: absolute;
+    width: 58.38px;
+    height: 79.43px;
+    left: 1420px;
+    top: 615px;
+
+    transform: rotate(151.03deg);
+}
