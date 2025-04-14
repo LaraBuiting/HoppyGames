@@ -1,0 +1,90 @@
+body {
+    font-family: 'Irish Grover', cursive;
+    color: white;
+}
+
+#title{
+    text-align: center;
+    font-size: 64px;
+    line-height: 77px;
+    color: #83e487;
+    margin: 0;
+}
+
+#sub_text {
+    font-size: 32px;
+    line-height: 39px;
+    color: #99d2f6;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#screen{
+    margin: auto;
+    width: 1000px;
+    height: 523px;
+    background: #83e487;
+    padding: 20px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* two equal columns */
+    gap: 20px; /* optional spacing between the two */
+
+}
+
+#wordSearch{
+    margin: auto;
+}
+
+#words{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 30px;
+}
+
+#instruction {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+#lists{
+    text-align: center;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.list{
+    list-style-type: none;
+    font-size: 20px;
+}
+
+.listitem{
+    line-height: 30px;
+}
+
+#back_container {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    left: 23px;
+    top: 20px;
+}
+
+#back_egg {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 0;
+    left: 0;
+}
+
+#back_arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
