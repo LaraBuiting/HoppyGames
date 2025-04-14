@@ -5,7 +5,7 @@ body {
 
 .h1{
     text-align: center;
-    font-size: 100px;
+    font-size: 70px;
     color: #a655e2;
 }
 
@@ -14,34 +14,34 @@ body {
 }
 
 #egg1{
-    width: 180px;
+    width: 120px;
     position: absolute;
-    top: 160px;
-    left: 40px;
+    top: 120px;
+    left: 60px;
     transform: rotate(-15deg);
 }
 
 #egg2{
-    width: 180px;
+    width: 140px;
     position: absolute;
-    bottom: 220px;
-    left: 550px;
+    bottom: 180px;
+    left: 470px;
     transform: rotate(15deg);
 }
 
 #egg3{
-    width: 150px;
+    width: 100px;
     position: absolute;
-    top: 200px;
-    right: 620px;
+    top: 150px;
+    right: 520px;
     transform: rotate(-5deg);
 }
 
 #egg4{
-    width: 150px;
+    width: 140px;
     position: absolute;
-    bottom: 150px;
-    right: 80px;
+    bottom: 50px;
+    right: 30px;
     transform: rotate(-10deg);
 }
 
@@ -49,21 +49,21 @@ body {
     margin-top: 25px;
     margin-bottom: 7px;
     color: #f06eaa;
-    font-size: 50px;
+    font-size: 40px;
 }
 
 #eggText2{
     margin-top: 25px;
     margin-bottom: 7px;
     color: #0072bc ;
-    font-size: 50px;
+    font-size: 40px;
 }
 
 #eggText3{
     margin-top: 25px;
     margin-bottom: 7px;
     color: #83e487;
-    font-size: 50px;
+    font-size: 40px;
 }
 
 .eggButton{
@@ -77,13 +77,13 @@ body {
     background: white;
     color: #a6d6ec;
     border-radius: 10px;
-    width: 500px;
+    width: 350px;
     padding: 20px;
     position: static;
 }
 
 #gamegrid{
-    width: 1700px;
+    width: 90%;
     margin: auto;
     display: grid;
     grid-template-columns: auto auto auto;
