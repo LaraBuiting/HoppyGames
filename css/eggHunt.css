@@ -122,3 +122,113 @@ body {
     pointer-events: none;
 }
 
+#game_screen_background {
+    position: absolute;
+    width: 1350px;
+    height: 523px;
+}
+
+
+#grass_part1 {
+    position: absolute;
+    width: 359px;
+    height: 116px;
+    left: 1094px;
+    top: 410px;
+    pointer-events: none;
+}
+
+#grass_part2 {
+    position: absolute;
+    width: 359px;
+    height: 116px;
+    left: 789px;
+    top: 410px;
+    pointer-events: none;
+}
+
+#grass_part3 {
+    position: absolute;
+    width: 359px;
+    height: 116px;
+    left: 519px;
+    top: 410px;
+    pointer-events: none;
+}
+
+#grass_part4 {
+    position: absolute;
+    width: 359px;
+    height: 116px;
+    left: 214px;
+    top: 410px;
+    pointer-events: none;
+}
+
+#grass_part5 {
+    position: absolute;
+    width: 359px;
+    height: 116px;
+    top: 410px;
+    pointer-events: none;
+}
+
+#tree1 {
+    position: absolute;
+    width: 361px;
+    height: 400px;
+    left: 875px;
+    top: -35px;
+    pointer-events: none;
+}
+
+#tree2 {
+    position: absolute;
+    width: 361px;
+    height: 400px;
+    left: 145px;
+    top: -75px;
+    pointer-events: none;
+}
+
+#sky_eggs_cannot_spawn1{
+    width: 170px;
+    height: 120px;
+}
+
+#sky_eggs_cannot_spawn2{
+    width: 150px;
+    height: 120px;
+}
+
+#sky_eggs_cannot_spawn3{
+    position: absolute;
+    top: 0px;
+    left: 480px;
+    width: 435px;
+    height: 134px;
+}
+
+#sky_eggs_cannot_spawn4{
+    position: absolute;
+    top: 130px;
+    left: 500px;
+    width: 380px;
+    height: 120px;
+}
+
+#sky_eggs_cannot_spawn5{
+    position: absolute;
+    top: 0px;
+    left: 1175px;
+    width: 200px;
+    height: 104px;
+}
+
+#sky_eggs_cannot_spawn6{
+    position: absolute;
+    top: 100px;
+    left: 1200px;
+    width: 380px;
+    height: 150px;
+}
