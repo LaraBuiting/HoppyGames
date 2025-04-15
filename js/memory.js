@@ -99,6 +99,16 @@ function createBoard() {
     updateBestScoreDisplay();
     updatePlayerDisplay();
 
+    // Hide or show the wrong turns count based on multiplayer or single-player mode
+    const wrongTurnsElement = document.getElementById("turn-count");
+    if (isMultiplayer) {
+        // Hide the wrong turns count in multiplayer mode
+        wrongTurnsElement.parentElement.style.display = "none";
+    } else {
+        // Show the wrong turns count in single-player mode
+        wrongTurnsElement.parentElement.style.display = "block";
+    }
+
     images.forEach((img) => {
         const card = document.createElement("div");
         card.classList.add("card");

@@ -7,6 +7,28 @@
     <link rel="stylesheet" href="../css/memory.css">
 </head>
 <body>
+
+<a href="menu.html">
+    <div class="icon" id="back_container">
+        <div id="back_egg">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+                <g clip-path="url(#clip0_12_48)">
+                    <path d="M56.25 30C56.25 34.9728 54.2746 39.7419 50.7583 43.2583C47.2419 46.7746 42.4728 48.75 37.5 48.75C30.165 48.75 21.4275 46.1625 14.55 42.2175C11.1263 40.2525 8.3325 38.0475 6.435 35.8275C4.5225 33.585 3.75 31.605 3.75 30C3.75 28.395 4.5225 26.415 6.435 24.1725C8.3325 21.9525 11.1263 19.7475 14.55 17.7825C21.4275 13.8375 30.165 11.25 37.5 11.25C42.4728 11.25 47.2419 13.2254 50.7583 16.7417C54.2746 20.2581 56.25 25.0272 56.25 30ZM60 30C60 24.0326 57.6295 18.3097 53.4099 14.0901C49.1903 9.87053 43.4674 7.5 37.5 7.5C21.3225 7.5 0 18.75 0 30C0 41.25 21.3225 52.5 37.5 52.5C43.4674 52.5 49.1903 50.1295 53.4099 45.9099C57.6295 41.6903 60 35.9674 60 30Z" fill="#83E487"/>
+                </g>
+                <defs>
+                    <clipPath id="clip0_12_48">
+                        <rect width="60" height="60" fill="white" transform="matrix(0 -1 1 0 0 60)"/>
+                    </clipPath>
+                </defs>
+            </svg>
+        </div>
+        <div id="back_arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 28 28" fill="none">
+                <path d="M17.8616 7.13385C17.3735 6.64569 16.5821 6.64569 16.0939 7.13385L9.9846 13.2491C9.00911 14.2256 9.0095 15.8079 9.98546 16.7837L16.0984 22.8967C16.5866 23.3849 17.378 23.3849 17.8662 22.8967C18.3544 22.4086 18.3544 21.6171 17.8662 21.129L12.6341 15.8969C12.146 15.4087 12.146 14.6174 12.6341 14.1291L17.8616 8.90161C18.3499 8.41346 18.3499 7.622 17.8616 7.13385Z" fill="#83E487"/>
+            </svg>
+        </div>
+    </div>
+</a>
 <div id="menu">
     <button id="singleplayer-btn">Singleplayer</button>
     <button id="multiplayer-btn">Multiplayer</button>
@@ -30,7 +52,9 @@
 
 <div id="win_popup" style="display: none;">
     <div id="popup_content">
-    <h2 id="win-text">YOU WIN!</h2>
+        <h2 id="win_text">
+            <span class="letter l1">Y</span><span class="letter l2">o</span><span class="letter l3">u</span><span class="letter l4"> </span><span class="letter l5">W</span><span class="letter l6">i</span><span class="letter l7">n</span><span class="letter l8">!</span>
+        </h2>
     <button id="retry_btn">Retry</button>
     </div>
 </div>
