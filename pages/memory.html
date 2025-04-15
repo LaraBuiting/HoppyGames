@@ -10,10 +10,19 @@
 <div class="game-wrapper">
     <h1 class="title">Memory</h1>
     <p class="subtitle">Match all cards</p>
+    <p class="turns">Wrong turns: <span id="turn-count">0</span></p>
+    <p class="high-score">Best score: <span id="best-score">–</span></p>
 </div>
 
 <div id="game-board"></div>
-
+<div id="win_popup" style="display: none;">
+    <div id="popup_content">
+        <h2 id="win_text">
+            <span class="letter l1">Y</span><span class="letter l2">o</span><span class="letter l3">u</span><span class="letter l4"> </span><span class="letter l5">W</span><span class="letter l6">i</span><span class="letter l7">n</span><span class="letter l8">!</span>
+        </h2>
+        <button id="retry_btn">Retry</button>
+    </div>
+</div>
 <script src="../js/memory.js"></script>
 </body>
 </html>

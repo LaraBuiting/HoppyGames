@@ -193,7 +193,7 @@ body {
 
 #sky_eggs_cannot_spawn2 {
     width: 150px;
-    height: 120px;
+    height: 230px;
 }
 
 #sky_eggs_cannot_spawn3 {
@@ -209,13 +209,13 @@ body {
     top: 130px;
     left: 500px;
     width: 380px;
-    height: 120px;
+    height: 180px;
 }
 
 #sky_eggs_cannot_spawn5 {
     position: absolute;
-    top: 0px;
     left: 1175px;
+    top: 0;
     width: 200px;
     height: 104px;
 }
@@ -225,7 +225,50 @@ body {
     top: 100px;
     left: 1200px;
     width: 380px;
-    height: 150px;
+    height: 200px;
+}
+
+#sky_eggs_cannot_spawn7 {
+    position: absolute;
+    top: 480px;
+    width: 1350px;
+    height: 75px;
+}
+
+#sky_eggs_cannot_spawn8 {
+    position: absolute;
+    top: 300px;
+    width: 1000px;
+    height: 75px;
+}
+
+#sky_eggs_cannot_spawn9 {
+    position: absolute;
+    top: 300px;
+    left: 1100px;
+    width: 300px;
+    height: 75px;
+}
+
+#sky_eggs_cannot_spawn10 {
+    position: absolute;
+    top: 390px;
+    left: 0;
+    width: 1300px;
+    height: 45px;
+}
+
+#sky_eggs_cannot_spawn1,
+#sky_eggs_cannot_spawn2,
+#sky_eggs_cannot_spawn3,
+#sky_eggs_cannot_spawn4,
+#sky_eggs_cannot_spawn5,
+#sky_eggs_cannot_spawn6,
+#sky_eggs_cannot_spawn7,
+#sky_eggs_cannot_spawn8,
+#sky_eggs_cannot_spawn9,
+#sky_eggs_cannot_spawn10{
+    background-color: transparent;
 }
 
 #win_popup {

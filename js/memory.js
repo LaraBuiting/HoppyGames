@@ -4,64 +4,105 @@ const cardImages = [
     "img9.png", "img10.png", "img11.png", "img12.png"
 ];
 
-let flippedCards = []; // Store flipped cards
-let lockBoard = false; // To prevent multiple clicks at the same time
+let flippedCards = [];
+let lockBoard = false;
+let matchedPairs = 0;
+let wrongTurns = 0;
+
+// Load the best score from localStorage
+let bestScore = localStorage.getItem("memoryBestScore");
+
+function updateTurnCount() {
+    document.getElementById("turn-count").textContent = wrongTurns;
+}
+
+function updateBestScoreDisplay() {
+    const display = document.getElementById("best-score");
+    display.textContent = bestScore !== null ? bestScore : "–";
+}
+
+function checkAndUpdateBestScore() {
+    if (bestScore === null || wrongTurns < parseInt(bestScore)) {
+        bestScore = wrongTurns;
+        localStorage.setItem("memoryBestScore", bestScore);
+        updateBestScoreDisplay();
+    }
+}
 
 function createBoard() {
-    const images = [...cardImages, ...cardImages]; // 12 pairs = 24 cards
+    const images = [...cardImages, ...cardImages];
     images.sort(() => 0.5 - Math.random());
+
+    const gameBoard = document.getElementById("game-board");
+    gameBoard.innerHTML = "";
+
+    flippedCards = [];
+    matchedPairs = 0;
+    wrongTurns = 0;
+    updateTurnCount();
+    updateBestScoreDisplay();
 
     images.forEach((img) => {
         const card = document.createElement("div");
         card.classList.add("card");
 
-        // Front (real image, initially hidden)
         const realImage = document.createElement("img");
         realImage.src = `../assets/img-memory/${img}`;
         realImage.classList.add("real-img");
 
-        // Back (cover image)
         const coverImage = document.createElement("img");
         coverImage.src = "../assets/img-memory/cover.png";
         coverImage.classList.add("cover-img");
 
-        // Add the images to the card
         card.appendChild(coverImage);
         card.appendChild(realImage);
 
-        // Add click functionality to reveal the image
         card.addEventListener("click", () => {
-            if (lockBoard) return; // Prevent clicking while the board is locked
+            if (lockBoard || card.classList.contains("revealed")) return;
 
             card.classList.add("revealed");
-            flippedCards.push(card); // Store the flipped card
+            flippedCards.push(card);
 
-            // If two cards are flipped, check if they match
             if (flippedCards.length === 2) {
                 lockBoard = true;
-
                 const [card1, card2] = flippedCards;
                 const img1 = card1.querySelector(".real-img").src;
                 const img2 = card2.querySelector(".real-img").src;
 
-                // If the cards match, leave them revealed
                 if (img1 === img2) {
-                    flippedCards = []; // Reset the flipped cards
+                    matchedPairs++;
+                    flippedCards = [];
                     lockBoard = false;
+
+                    if (matchedPairs === 12) {
+                        // Show win screen
+                        document.getElementById("win_popup").style.display = "flex";
+                        checkAndUpdateBestScore();
+                    }
                 } else {
-                    // If they don't match, flip them back after a short delay
+                    wrongTurns++;
+                    updateTurnCount();
+
                     setTimeout(() => {
                         card1.classList.remove("revealed");
                         card2.classList.remove("revealed");
-                        flippedCards = []; // Reset the flipped cards
+                        flippedCards = [];
                         lockBoard = false;
-                    }, 1000); // 1 second delay
+                    }, 1000);
                 }
             }
         });
 
-        document.getElementById("game-board").appendChild(card);
+        gameBoard.appendChild(card);
     });
 }
 
+document.getElementById("retry_btn").addEventListener("click", () => {
+    // Hide the win popup
+    document.getElementById("win_popup").style.display = "none";
+    // Restart the game
+    createBoard();
+});
+
+// Initialize the game board
 createBoard();
