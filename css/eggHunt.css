@@ -269,6 +269,7 @@ body {
 #sky_eggs_cannot_spawn9,
 #sky_eggs_cannot_spawn10{
     background-color: transparent;
+    pointer-events: none;
 }
 
 #win_popup {
