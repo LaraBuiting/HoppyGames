@@ -7,13 +7,29 @@ body {
 
 .game-wrapper {
     position: relative;
-    width: 1523px;
+    width: 100%;
     height: 200px;
     margin: 0 auto;
     padding: 20px;
     box-sizing: border-box;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     background: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.score-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    top: 20px; /* Pas aan als je wilt dat het verder naar beneden zit */
+    padding: 0 20px;
+}
+.score-container .player-score {
+    font-size: 20px;
+    color: #777;
 }
 
 .title {
@@ -25,6 +41,7 @@ body {
     line-height: 77px;
     color: #F95EA5;
 }
+
 
 .subtitle {
     position: absolute;
@@ -40,20 +57,20 @@ body {
     display: grid;
     grid-template-columns: repeat(8, 149px);
     grid-template-rows: repeat(3, 148px);
-    gap: 26px 24px;
+    gap: 24px; /* Zorgt voor ruimte tussen kaarten */
     justify-content: center;
     margin-top: 20px;
-    z-index: 1;
 }
 
 .card {
-    width: 147px;
+    width: 149px;
     height: 148px;
     background-color: #fff;
     position: relative;
     cursor: pointer;
     border-radius: 8px;
     overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .card img {
@@ -66,16 +83,17 @@ body {
 }
 
 .card .real-img {
-    display: none; /* Hide the real image by default */
+    display: none;
 }
 
 .card.revealed .real-img {
-    display: block; /* Show the real image when clicked */
+    display: block;
 }
 
 .card.revealed .cover-img {
-    display: none; /* Hide the cover image when clicked */
+    display: none;
 }
+
 #win_popup {
     position: fixed;
     top: 0;
@@ -90,15 +108,17 @@ body {
 }
 
 #popup_content {
+    position: absolute;
     width: 516px;
     height: 361px;
+    left: 504px;
+    top: 166px;
     background: #FFFFFF;
     border-radius: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
 }
 
 #win_text {
@@ -137,8 +157,8 @@ body {
     position: absolute;
     width: 266px;
     height: 76px;
-    left: 42%;
-    top: 50%;
+    left: 125px;
+    top: 200px;
     background: #F95EA5;
     border-radius: 20px;
     border: none;
@@ -151,22 +171,66 @@ body {
     cursor: pointer;
 }
 
-    .turns {
-        position: absolute;
-        top: 160px;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 24px;
-        line-height: 32px;
-        color: #555;
-
-    }
-
-
-.high-score {
+.current-player {
     position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    color: #555;
+}
 
+#player1-score, #player2-score {
     font-size: 20px;
     color: #777;
+}
 
+/* Menu Styles */
+#menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f3f3f3;
+}
+
+#menu h1 {
+    font-size: 64px;
+    color: #F95EA5;
+    margin-bottom: 40px;
+}
+
+#menu button {
+    background-color: #F95EA5;
+    color: white;
+    font-size: 32px;
+    padding: 20px 40px;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#menu button:hover {
+    background-color: #F490F7;
+}
+
+/* Game styles */
+.game-wrapper {
+    display: none;
+    text-align: center;
+}
+#player-info{
+    display: flex;
+    flex-direction: row;
+}
+#player-turn{
+justify-content: center;
+}
+#player1-score{
+    float: left;
+}
+#player2-score{
+    float: right;
 }
