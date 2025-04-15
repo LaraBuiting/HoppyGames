@@ -29,13 +29,13 @@ body {
     padding: 20px;
 
     display: grid;
-    grid-template-columns: 1fr 1fr; /* two equal columns */
-    gap: 20px; /* optional spacing between the two */
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 
 }
 
 #wordSearch{
-    position: relative; /* Needed for absolute positioning inside */
+    position: relative;
     margin: auto;
 }
 
