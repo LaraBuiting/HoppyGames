@@ -1,3 +1,77 @@
 body {
     font-family: 'Irish Grover', cursive;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+}
+
+.game-wrapper {
+    position: relative;
+    width: 1523px;
+    height: 200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background: #FFFFFF;
+}
+
+.title {
+    position: absolute;
+    top: 37px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 64px;
+    line-height: 77px;
+    color: #F95EA5;
+}
+
+.subtitle {
+    position: absolute;
+    top: 114px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 32px;
+    line-height: 39px;
+    color: #F490F7;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(8, 149px);
+    grid-template-rows: repeat(3, 148px);
+    gap: 26px 24px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.card {
+    width: 147px;
+    height: 148px;
+    background-color: #fff;
+    position: relative;
+    cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.card .real-img {
+    display: none; /* Hide the real image by default */
+}
+
+.card.revealed .real-img {
+    display: block; /* Show the real image when clicked */
+}
+
+.card.revealed .cover-img {
+    display: none; /* Hide the cover image when clicked */
 }

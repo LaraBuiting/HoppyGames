@@ -8,7 +8,8 @@ body {
     font-size: 64px;
     line-height: 77px;
     color: #83e487;
-    margin: 0;
+    margin-bottom: 0;
+    margin-top: 40px;
 }
 
 #sub_text {
@@ -16,12 +17,13 @@ body {
     line-height: 39px;
     color: #99d2f6;
     text-align: center;
+    margin-top: 0;
     margin-bottom: 15px;
 }
 
 #screen{
     margin: auto;
-    width: 1000px;
+    width: 1200px;
     height: 523px;
     background: #83e487;
     padding: 20px;
