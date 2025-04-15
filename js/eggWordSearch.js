@@ -36,6 +36,7 @@ for (let i = 0; i < 12 * 18; i++) {
             });
             score ++;
             if (score === 14){
+                win()
                 console.log('you win')
             }
         }
@@ -51,6 +52,7 @@ for (let i = 0; i < 12 * 18; i++) {
             });
             score ++;
             if (score === 14){
+                win()
                 console.log('you win')
             }
         }
@@ -66,6 +68,7 @@ for (let i = 0; i < 12 * 18; i++) {
             });
             score ++;
             if (score === 14){
+                win()
                 console.log('you win')
             }
         }
@@ -81,6 +84,7 @@ for (let i = 0; i < 12 * 18; i++) {
             });
             score ++;
             if (score === 14){
+                win()
                 console.log('you win')
             }
         }
@@ -96,6 +100,7 @@ for (let i = 0; i < 12 * 18; i++) {
             });
             score ++;
             if (score === 14){
+                win()
                 console.log('you win')
             }
         }
@@ -111,6 +116,7 @@ for (let i = 0; i < 12 * 18; i++) {
             });
             score ++;
             if (score === 14){
+                win()
                 console.log('you win')
             }
         }
@@ -126,6 +132,7 @@ for (let i = 0; i < 12 * 18; i++) {
             });
             score ++;
             if (score === 14){
+                win()
                 console.log('you win')
             }
         }
@@ -141,6 +148,7 @@ for (let i = 0; i < 12 * 18; i++) {
             });
             score ++;
             if (score === 14){
+                win()
                 console.log('you win')
             }
         }
@@ -156,6 +164,7 @@ for (let i = 0; i < 12 * 18; i++) {
             });
             score ++;
             if (score === 14){
+                win()
                 console.log('you win')
             }
         }
@@ -171,6 +180,7 @@ for (let i = 0; i < 12 * 18; i++) {
             });
             score ++;
             if (score === 14){
+                win()
                 console.log('you win')
             }
         }
@@ -186,6 +196,7 @@ for (let i = 0; i < 12 * 18; i++) {
             });
             score ++;
             if (score === 14){
+                win()
                 console.log('you win')
             }
         }
@@ -201,6 +212,7 @@ for (let i = 0; i < 12 * 18; i++) {
             });
             score ++;
             if (score === 14){
+                win()
                 console.log('you win')
             }
         }
@@ -216,6 +228,7 @@ for (let i = 0; i < 12 * 18; i++) {
             });
             score ++;
             if (score === 14){
+                win()
                 console.log('you win')
             }
         }
@@ -236,4 +249,9 @@ function getActiveSquares() {
         });
     });
     return activeStatus;
+}
+
+function win(){
+    const popUp = document.getElementById("win_popup");
+    popUp.style.display = 'block';
 }
