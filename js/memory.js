@@ -3,10 +3,8 @@ const cardImages = [
     "img5.png", "img6.png", "img7.png", "img8.png",
     "img9.png", "img10.png", "img11.png", "img12.png"
 ];
-let playerScores = {
-    1: 0,
-    2: 0
-};
+
+let playerScores = { 1: 0, 2: 0 };
 let flippedCards = [];
 let lockBoard = false;
 let matchedPairs = 0;
@@ -15,7 +13,6 @@ let bestScore = localStorage.getItem("memoryBestScore");
 
 let isMultiplayer = false;
 let currentPlayer = 1;
-let scores = { 1: 0, 2: 0 };
 
 function updateTurnCount() {
     document.getElementById("turn-count").textContent = wrongTurns;
@@ -36,11 +33,11 @@ function checkAndUpdateBestScore() {
 
 function updatePlayerDisplay() {
     const playerTurnEl = document.getElementById("player-turn");
-    if (playerTurnEl && typeof currentPlayer !== "undefined") {
+    if (playerTurnEl) {
         playerTurnEl.textContent = `Player ${currentPlayer}'s turn`;
     }
 
-    if (typeof playerScores !== "undefined") {
+    if (playerScores) {
         const player1ScoreEl = document.getElementById("player1-score");
         const player2ScoreEl = document.getElementById("player2-score");
 
@@ -54,6 +51,36 @@ function switchPlayer() {
     updatePlayerDisplay();
 }
 
+function showWinner() {
+    const winText = document.getElementById("win-text");
+    const player1Score = playerScores[1];
+    const player2Score = playerScores[2];
+
+    if (isMultiplayer) {
+        // Multiplayer logic
+        if (player1Score > player2Score) {
+            winText.textContent = "Player 1 Wins!";
+        } else if (player2Score > player1Score) {
+            winText.textContent = "Player 2 Wins!";
+        } else {
+            winText.textContent = "It's a tie!";
+        }
+    } else {
+        // Singleplayer logic
+        if (matchedPairs === 12) { // All pairs matched
+            winText.textContent = "You Win!";
+        } else {
+            winText.textContent = "It's a tie!";
+        }
+    }
+
+    // Show the win popup after determining the winner
+    const winPopup = document.getElementById("win_popup");
+    if (winPopup) {
+        winPopup.style.display = "flex"; // Display the win popup
+    }
+}
+
 function createBoard() {
     const images = [...cardImages, ...cardImages];
     images.sort(() => 0.5 - Math.random());
@@ -65,7 +92,7 @@ function createBoard() {
     flippedCards = [];
     matchedPairs = 0;
     wrongTurns = 0;
-    scores = { 1: 0, 2: 0 };
+    playerScores = { 1: 0, 2: 0 };
     currentPlayer = 1;
 
     updateTurnCount();
@@ -102,14 +129,14 @@ function createBoard() {
                 if (img1 === img2) {
                     matchedPairs++;
                     if (isMultiplayer) {
-                        scores[currentPlayer]++;
-                        updatePlayerDisplay();
+                        playerScores[currentPlayer]++;  // Add points immediately
+                        updatePlayerDisplay();  // Update score right away
                     }
                     flippedCards = [];
                     lockBoard = false;
 
                     if (matchedPairs === 12) {
-                        document.getElementById("win_popup").style.display = "flex";
+                        showWinner();  // Show the winner when all matches are found
                         if (!isMultiplayer) checkAndUpdateBestScore();
                     }
                 } else {
@@ -159,34 +186,9 @@ document.getElementById("retry_btn").addEventListener("click", () => {
     createBoard();
 });
 
+// Initialize the menu
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("menu").style.display = "flex";
     document.querySelector(".game-wrapper").style.display = "none";
     document.getElementById("win_popup").style.display = "none";
-
-    // Attach event listeners after DOM is fully loaded
-    document.getElementById("singleplayer-btn").addEventListener("click", () => {
-        isMultiplayer = false;
-        document.getElementById("menu").style.display = "none";
-        document.querySelector(".game-wrapper").style.display = "block";
-        document.getElementById("game-board").style.display = "grid";
-        document.getElementById("player-info").style.display = "none";
-        document.getElementById("high-score-wrapper").style.display = "block";
-        createBoard();
-    });
-
-    document.getElementById("multiplayer-btn").addEventListener("click", () => {
-        isMultiplayer = true;
-        document.getElementById("menu").style.display = "none";
-        document.querySelector(".game-wrapper").style.display = "block";
-        document.getElementById("game-board").style.display = "grid";
-        document.getElementById("player-info").style.display = "block";
-        document.getElementById("high-score-wrapper").style.display = "none";
-        createBoard();
-    });
-
-    document.getElementById("retry_btn").addEventListener("click", () => {
-        document.getElementById("win_popup").style.display = "none";
-        createBoard();
-    });
 });
