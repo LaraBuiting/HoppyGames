@@ -6,9 +6,8 @@ let foundCount = 0;
 
 const screenWidth = gameScreen.offsetWidth;
 const screenHeight = gameScreen.offsetHeight;
-const bottomBuffer = 150;
+const bottomBuffer = 50;
 
-// Get tree elements and their positions relative to the game screen
 const gameScreenRect = gameScreen.getBoundingClientRect();
 const trees = [document.getElementById('tree1'), document.getElementById('tree2')].map(tree => {
     const rect = tree.getBoundingClientRect();
@@ -25,7 +24,6 @@ const trees = [document.getElementById('tree1'), document.getElementById('tree2'
     };
 });
 
-// No spawn zones (sky zones)
 const noSpawnZones = document.querySelectorAll('#sky_eggs_cannot_spawn1, #sky_eggs_cannot_spawn2, #sky_eggs_cannot_spawn3, #sky_eggs_cannot_spawn4, #sky_eggs_cannot_spawn5, #sky_eggs_cannot_spawn6');
 
 function isInNoSpawnZone(x, y, eggWidth, eggHeight) {
@@ -66,17 +64,17 @@ function isInTreeEdge(x, y, eggWidth, eggHeight) {
             y < tree.bottom;
 
         const isInEdgeArea =
-            distanceToCenter < tree.radius && // inside the tree's radius
-            distanceToCenter > tree.radius / 1.5; // not in the center "donut hole"
+            distanceToCenter < tree.radius &&
+            distanceToCenter > tree.radius / 1.5;
 
         if (isInsideTreeBounds && isInEdgeArea) {
-            return true; // valid edge spot on tree
+            return true;
         }
     }
     return false;
 }
 
-eggs.forEach(egg => {
+function placeEgg(egg) {
     const maxX = screenWidth - egg.offsetWidth;
     const maxY = screenHeight - egg.offsetHeight - bottomBuffer;
 
@@ -92,7 +90,6 @@ eggs.forEach(egg => {
         const insideNoSpawnZone = isInNoSpawnZone(x, y, egg.offsetWidth, egg.offsetHeight);
 
         if ((onTreeEdge || !trees.some(tree => {
-            // Avoid full tree collision
             return (
                 x + egg.offsetWidth > tree.left &&
                 x < tree.right &&
@@ -100,13 +97,12 @@ eggs.forEach(egg => {
                 y < tree.bottom
             );
         })) && !insideNoSpawnZone) {
-            break; // Good spot!
+            break;
         }
 
         tries++;
     } while (tries < maxTries);
 
-    // Fallback placement if it can't find a good spot
     if (tries >= maxTries) {
         console.warn('Max tries reached, fallback placement used.');
         x = Math.floor(Math.random() * maxX);
@@ -115,13 +111,39 @@ eggs.forEach(egg => {
 
     egg.style.left = `${x}px`;
     egg.style.top = `${y}px`;
+}
 
-    egg.addEventListener('click', () => {
-        if (!egg.classList.contains('found')) {
-            egg.classList.add('found');
-            egg.style.display = 'none';
-            foundCount++;
-            counter.textContent = `Eggs found: ${foundCount}`;
-        }
+function initEggs() {
+    eggs.forEach(egg => {
+        egg.classList.remove('found');
+        egg.style.display = 'block';
+        placeEgg(egg);
+
+        egg.onclick = () => {
+            if (!egg.classList.contains('found')) {
+                egg.classList.add('found');
+                egg.style.display = 'none';
+                foundCount++;
+                counter.textContent = `Eggs found: ${foundCount}`;
+
+                if (foundCount === eggs.length) {
+                    document.getElementById('win_popup').style.display = 'flex';
+                }
+            }
+        };
     });
-});
+}
+
+// Initialize eggs on first load
+initEggs();
+
+// Retry button logic
+const retryBtn = document.getElementById('retry_btn');
+if (retryBtn) {
+    retryBtn.addEventListener('click', () => {
+        foundCount = 0;
+        counter.textContent = `Eggs found: 0`;
+        document.getElementById('win_popup').style.display = 'none';
+        initEggs();
+    });
+}

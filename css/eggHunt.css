@@ -2,7 +2,7 @@ body {
     font-family: 'Irish Grover', cursive;
 }
 
-#title{
+#title {
     position: absolute;
     width: 271px;
     height: 77px;
@@ -11,7 +11,6 @@ body {
 
     font-size: 64px;
     line-height: 77px;
-
     color: #F95EA5;
 }
 
@@ -24,7 +23,6 @@ body {
 
     font-size: 32px;
     line-height: 39px;
-
     color: #F490F7;
 }
 
@@ -36,7 +34,6 @@ body {
 
     font-size: 32px;
     line-height: 39px;
-
     color: #99D2F6;
 }
 
@@ -85,7 +82,6 @@ body {
     transform: rotate(180deg);
 }
 
-
 #easter_egg_img4 {
     position: absolute;
     width: 58.38px;
@@ -127,7 +123,6 @@ body {
     width: 1350px;
     height: 523px;
 }
-
 
 #grass_part1 {
     position: absolute;
@@ -191,17 +186,17 @@ body {
     pointer-events: none;
 }
 
-#sky_eggs_cannot_spawn1{
+#sky_eggs_cannot_spawn1 {
     width: 170px;
     height: 120px;
 }
 
-#sky_eggs_cannot_spawn2{
+#sky_eggs_cannot_spawn2 {
     width: 150px;
     height: 120px;
 }
 
-#sky_eggs_cannot_spawn3{
+#sky_eggs_cannot_spawn3 {
     position: absolute;
     top: 0px;
     left: 480px;
@@ -209,7 +204,7 @@ body {
     height: 134px;
 }
 
-#sky_eggs_cannot_spawn4{
+#sky_eggs_cannot_spawn4 {
     position: absolute;
     top: 130px;
     left: 500px;
@@ -217,7 +212,7 @@ body {
     height: 120px;
 }
 
-#sky_eggs_cannot_spawn5{
+#sky_eggs_cannot_spawn5 {
     position: absolute;
     top: 0px;
     left: 1175px;
@@ -225,10 +220,87 @@ body {
     height: 104px;
 }
 
-#sky_eggs_cannot_spawn6{
+#sky_eggs_cannot_spawn6 {
     position: absolute;
     top: 100px;
     left: 1200px;
     width: 380px;
     height: 150px;
+}
+
+#win_popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+#popup_content {
+    position: absolute;
+    width: 516px;
+    height: 361px;
+    left: 504px;
+    top: 166px;
+    background: #FFFFFF;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#win_text {
+    font-family: 'Irish Grover', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 96px;
+    width: 362px;
+    height: 275px;
+    text-align: center;
+    color: #000000;
+    margin: 0;
+}
+
+#win_text .letter {
+    display: inline-block;
+}
+
+#win_text .l1 { color: #F95EA5; }
+#win_text .l2 { color: #F490F7; }
+#win_text .l3 { color: #99D2F6; }
+#win_text .l4 { color: #000000; }
+#win_text .l5 { color: #83E487; }
+#win_text .l6 { color: #FFA500; }
+#win_text .l7 { color: #9370DB; }
+#win_text .l8 { color: #FF6347; }
+
+.letter.l4 {
+    width: auto;
+    display: inline;
+    margin: 0 13px;
+    color: transparent;
+}
+
+#retry_btn {
+    position: absolute;
+    width: 266px;
+    height: 76px;
+    left: 125px;
+    top: 200px;
+    background: #F95EA5;
+    border-radius: 20px;
+    border: none;
+    font-family: 'Irish Grover', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 58px;
+    color: #FFFFFF;
+    cursor: pointer;
 }
