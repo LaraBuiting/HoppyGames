@@ -1,5 +1,5 @@
 const highlight = document.querySelector('.highlight');
-let score = 0;
+let score = 14;
 
 for (let i = 0; i < 12 * 18; i++) {
     const cell = document.createElement('div');
@@ -19,8 +19,11 @@ for (let i = 0; i < 12 * 18; i++) {
                 const word = document.getElementById("candy");
                 word.style.textDecoration = "line-through";
             });
-            score ++;
-            if (score === 14){
+            score --;
+            document.getElementById("score").innerHTML = "Amount off words that still need to be found: "+ score;
+
+            if (score === 0){
+                win()
                 console.log('you win')
             }
         }
@@ -34,8 +37,10 @@ for (let i = 0; i < 12 * 18; i++) {
                 const word = document.getElementById("sunday");
                 word.style.textDecoration = "line-through";
             });
-            score ++;
-            if (score === 14){
+            score --;
+            document.getElementById("score").innerHTML = "Amount off words that still need to be found: "+ score;
+
+            if (score === 0){
                 win()
                 console.log('you win')
             }
@@ -50,8 +55,10 @@ for (let i = 0; i < 12 * 18; i++) {
                 const word = document.getElementById("chocolate");
                 word.style.textDecoration = "line-through";
             });
-            score ++;
-            if (score === 14){
+            score --;
+            document.getElementById("score").innerHTML = "Amount off words that still need to be found: "+ score;
+
+            if (score === 0){
                 win()
                 console.log('you win')
             }
@@ -66,8 +73,10 @@ for (let i = 0; i < 12 * 18; i++) {
                 const word = document.getElementById("celebration");
                 word.style.textDecoration = "line-through";
             });
-            score ++;
-            if (score === 14){
+            score --;
+            document.getElementById("score").innerHTML = "Amount off words that still need to be found: "+ score;
+
+            if (score === 0){
                 win()
                 console.log('you win')
             }
@@ -82,8 +91,10 @@ for (let i = 0; i < 12 * 18; i++) {
                 const word = document.getElementById("chickens");
                 word.style.textDecoration = "line-through";
             });
-            score ++;
-            if (score === 14){
+            score --;
+            document.getElementById("score").innerHTML = "Amount off words that still need to be found: "+ score;
+
+            if (score === 0){
                 win()
                 console.log('you win')
             }
@@ -98,8 +109,10 @@ for (let i = 0; i < 12 * 18; i++) {
                 const word = document.getElementById("easter");
                 word.style.textDecoration = "line-through";
             });
-            score ++;
-            if (score === 14){
+            score --;
+            document.getElementById("score").innerHTML = "Amount off words that still need to be found: "+ score;
+
+            if (score === 0){
                 win()
                 console.log('you win')
             }
@@ -114,8 +127,10 @@ for (let i = 0; i < 12 * 18; i++) {
                 const word = document.getElementById("bunny");
                 word.style.textDecoration = "line-through";
             });
-            score ++;
-            if (score === 14){
+            score --;
+            document.getElementById("score").innerHTML = "Amount off words that still need to be found: "+ score;
+
+            if (score === 0){
                 win()
                 console.log('you win')
             }
@@ -130,8 +145,10 @@ for (let i = 0; i < 12 * 18; i++) {
                 const word = document.getElementById("basket");
                 word.style.textDecoration = "line-through";
             });
-            score ++;
-            if (score === 14){
+            score --;
+            document.getElementById("score").innerHTML = "Amount off words that still need to be found: "+ score;
+
+            if (score === 0){
                 win()
                 console.log('you win')
             }
@@ -146,8 +163,10 @@ for (let i = 0; i < 12 * 18; i++) {
                 const word = document.getElementById("tulip");
                 word.style.textDecoration = "line-through";
             });
-            score ++;
-            if (score === 14){
+            score --;
+            document.getElementById("score").innerHTML = "Amount off words that still need to be found: "+ score;
+
+            if (score === 0){
                 win()
                 console.log('you win')
             }
@@ -162,8 +181,10 @@ for (let i = 0; i < 12 * 18; i++) {
                 const word = document.getElementById("jellybean");
                 word.style.textDecoration = "line-through";
             });
-            score ++;
-            if (score === 14){
+            score --;
+            document.getElementById("score").innerHTML = "Amount off words that still need to be found: "+ score;
+
+            if (score === 0){
                 win()
                 console.log('you win')
             }
@@ -178,8 +199,10 @@ for (let i = 0; i < 12 * 18; i++) {
                 const word = document.getElementById("spring");
                 word.style.textDecoration = "line-through";
             });
-            score ++;
-            if (score === 14){
+            score --;
+            document.getElementById("score").innerHTML = "Amount off words that still need to be found: "+ score;
+
+            if (score === 0){
                 win()
                 console.log('you win')
             }
@@ -194,8 +217,10 @@ for (let i = 0; i < 12 * 18; i++) {
                 const word = document.getElementById("eggs");
                 word.style.textDecoration = "line-through";
             });
-            score ++;
-            if (score === 14){
+            score --;
+            document.getElementById("score").innerHTML = "Amount off words that still need to be found: "+ score;
+
+            if (score === 0){
                 win()
                 console.log('you win')
             }
@@ -210,8 +235,10 @@ for (let i = 0; i < 12 * 18; i++) {
                 const word = document.getElementById("sunrise");
                 word.style.textDecoration = "line-through";
             });
-            score ++;
-            if (score === 14){
+            score --;
+            document.getElementById("score").innerHTML = "Amount off words that still need to be found: "+ score;
+
+            if (score === 0){
                 win()
                 console.log('you win')
             }
@@ -226,8 +253,10 @@ for (let i = 0; i < 12 * 18; i++) {
                 const word = document.getElementById("lamb");
                 word.style.textDecoration = "line-through";
             });
-            score ++;
-            if (score === 14){
+            score --;
+            document.getElementById("score").innerHTML = "Amount off words that still need to be found: "+ score;
+
+            if (score === 0){
                 win()
                 console.log('you win')
             }
