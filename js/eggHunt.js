@@ -6,7 +6,7 @@ let foundCount = 0;
 
 const screenWidth = gameScreen.offsetWidth;
 const screenHeight = gameScreen.offsetHeight;
-const bottomBuffer = 150;
+const bottomBuffer = 50;
 
 // Get tree elements and their positions relative to the game screen
 const gameScreenRect = gameScreen.getBoundingClientRect();
