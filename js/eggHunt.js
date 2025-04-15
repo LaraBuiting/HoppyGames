@@ -24,7 +24,7 @@ const trees = [document.getElementById('tree1'), document.getElementById('tree2'
     };
 });
 
-const noSpawnZones = document.querySelectorAll('#sky_eggs_cannot_spawn1, #sky_eggs_cannot_spawn2, #sky_eggs_cannot_spawn3, #sky_eggs_cannot_spawn4, #sky_eggs_cannot_spawn5, #sky_eggs_cannot_spawn6');
+const noSpawnZones = document.querySelectorAll('#sky_eggs_cannot_spawn1, #sky_eggs_cannot_spawn2, #sky_eggs_cannot_spawn3, #sky_eggs_cannot_spawn4, #sky_eggs_cannot_spawn5, #sky_eggs_cannot_spawn6, #sky_eggs_cannot_spawn7, #sky_eggs_cannot_spawn8, #sky_eggs_cannot_spawn9, #sky_eggs_cannot_spawn10');
 
 function isInNoSpawnZone(x, y, eggWidth, eggHeight) {
     for (const zone of noSpawnZones) {
@@ -63,9 +63,10 @@ function isInTreeEdge(x, y, eggWidth, eggHeight) {
             y + eggHeight > tree.top &&
             y < tree.bottom;
 
+        const buffer = 1.3;
         const isInEdgeArea =
-            distanceToCenter < tree.radius &&
-            distanceToCenter > tree.radius / 1.5;
+            distanceToCenter < tree.radius * buffer &&
+            distanceToCenter > tree.radius / buffer;
 
         if (isInsideTreeBounds && isInEdgeArea) {
             return true;
